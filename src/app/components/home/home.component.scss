@@ -1,0 +1,17 @@
+.content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1290px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .tour-card {
+    margin: 15px;
+    width: 400px;
+    min-height: 1px;
+  }
+}

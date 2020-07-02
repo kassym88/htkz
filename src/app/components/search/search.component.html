@@ -1,0 +1,92 @@
+<div class="content col-12 col-sm-12 col-md-8 offset-md-2">
+  <form [formGroup]="form" (ngSubmit)="submitSearch()">
+    <div class="one-row">
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Город вылета</mat-label>
+          <mat-select formControlName="departCity">
+            <mat-option *ngFor="let departCity of cities" [value]="departCity">
+              {{departCity.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Страна</mat-label>
+          <mat-select formControlName="country">
+            <mat-option *ngFor="let country of countries" [value]="country">
+              {{country.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Дата</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Кол-во ночей от</mat-label>
+          <mat-select formControlName="nights">
+            <mat-option *ngFor="let night of nights" [value]="night">
+              {{night}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Кол-во ночей до</mat-label>
+          <mat-select formControlName="nightsTo">
+            <mat-option *ngFor="let nightTo of nightsTo" [value]="nightTo">
+              {{nightTo}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-button color="accent">Поиск</button>
+  </form>
+
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="departCity">
+        <th mat-header-cell *matHeaderCellDef> Город вылета - Страна </th>
+        <td mat-cell *matCellDef="let element"> {{element.departCity.name + ' - ' + element.country.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Дата вылета </th>
+        <td mat-cell *matCellDef="let element"> {{element.date.toLocaleString()}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nights">
+        <th mat-header-cell *matHeaderCellDef> Кол-во ночей от - кол-во ночей до </th>
+        <td mat-cell *matCellDef="let element"> {{element.nights + ' - ' + element.nightsTo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="hotelName">
+        <th mat-header-cell *matHeaderCellDef> Отель </th>
+        <td mat-cell *matCellDef="let element"> {{element.hotelName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Цена </th>
+        <td mat-cell *matCellDef="let element"> {{element.price + ' ' + element.currency}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
+
