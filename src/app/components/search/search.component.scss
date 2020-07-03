@@ -1,14 +1,9 @@
 .content {
-  .one-row {
-    display: flex;
-    justify-content: space-between;
-  }
-
   form {
     margin-bottom: 15px;
   }
 
-  button {
+  .button-search {
     border: 2px solid red;
     width: 100%;
   }
@@ -21,5 +16,32 @@
   table {
     width: 100%;
   }
+
+  .align-middle {
+    margin: auto;
+  }
 }
 
+.content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.result-content {
+  max-width: 1290px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .tour-card {
+    margin: 15px;
+    width: 400px;
+    min-height: 1px;
+
+    mat-card-subtitle {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

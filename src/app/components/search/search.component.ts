@@ -17,11 +17,17 @@ export class SearchComponent implements OnInit, OnDestroy {
     {name: 'Алматы', id: 10},
     {name: 'Астана', id: 11}
   ];
-  countries: CityModel[] = [
-    {name: 'Турция', id: 552},
-    {name: 'Тайланд', id: 553},
-    {name: 'Чехия', id: 554},
-  ];
+  coutriesToGo = {
+    10: [
+      {name: 'Турция', id: 552},
+      {name: 'Тайланд', id: 553}
+    ],
+    11: [
+      {name: 'Турция', id: 552},
+      {name: 'Чехия', id: 554}
+    ]
+  };
+  countries: CityModel[] = [];
   nights: number[] = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
   nightsTo = this.nights;
   form: FormGroup;
@@ -62,6 +68,10 @@ export class SearchComponent implements OnInit, OnDestroy {
             .sort((a, b) => a.price - b.price)
         );
     }
+  }
+
+  changeDepartCity(event): void {
+    this.countries = this.coutriesToGo[event.value.id];
   }
 
   ngOnDestroy(): void {
