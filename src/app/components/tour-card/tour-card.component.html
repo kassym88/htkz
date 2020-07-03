@@ -1,0 +1,22 @@
+<div class="content">
+  <div class="card-face">
+    <div class="card-header">
+      <div class="left">8.5/10</div>
+      <div class="right">-55%</div>
+    </div>
+    <div class="stars"></div>
+    <div class="hotel-name">{{card.hotelName}}</div>
+    <div class="country">{{card.country.name}}</div>
+  </div>
+  <div class="card-button">
+    <button>Рекомендуем</button>
+  </div>
+  <div class="info">
+    <div>{{card.nights + ' - ' + card.nightsTo + ' ночей'}}</div>
+    <div>{{'Вылеты ' + card.date.toLocaleDateString() + ' из ' + card.departCity.name}}</div>
+  </div>
+  <div class="price">
+    <div class="left">{{'от ' + card.price + ' ' + card.currency}}</div>
+    <div class="right">{{ (card.price / 24).toFixed() + card.currency + ' x 24 мес.'}}</div>
+  </div>
+</div>

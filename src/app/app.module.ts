@@ -20,6 +20,7 @@ import { SortingComponent } from './components/sorting/sorting.component';
 import { HomeComponent } from './components/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import { TourCardComponent } from './components/tour-card/tour-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatTableModule} from '@angular/material/table';
     FooterComponent,
     FiltersComponent,
     SortingComponent,
-    HomeComponent
+    HomeComponent,
+    TourCardComponent
   ],
   imports: [
     BrowserModule,

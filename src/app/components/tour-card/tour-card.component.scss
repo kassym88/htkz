@@ -1,0 +1,138 @@
+.content {
+  width: 400px;
+  background: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  box-shadow: 0 3px 8px rgba(0, 14, 11, 0.14);
+
+  .card-face {
+    padding: 14px;
+    height: 225px;
+    margin: 11px 11px 14px 10px;
+    border: 1px solid blue;
+    background-image: url('/assets/htkz.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .card-header {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+
+      .left {
+        width: 83px;
+        height: 41px;
+        border-radius: 35px;
+        background: #52BA50;
+
+        font-style: normal;
+        font-size: 17px;
+        line-height: 32px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+
+      .right {
+        width: 63px;
+        height: 41px;
+        background: #DA2734;
+
+        font-style: normal;
+        font-size: 17px;
+        line-height: 32px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+
+        color: #FFFFFF;
+      }
+    }
+
+    .hotel-name {
+      font-style: normal;
+      line-height: 38px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      color: #FFFFFF;
+      margin-top: 100px;
+    }
+
+    .country {
+      font-style: normal;
+      line-height: 6px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: #FFFFFF;
+    }
+  }
+
+  .card-button {
+    display: flex;
+    justify-content: flex-end;
+    margin: -37px 11px 14px 10px;
+    padding-right: 10px;
+    button {
+      width: 150px;
+      border: transparent;
+      height: 43px;
+      background: #52BA50;
+      color: #FFFFFF;
+      border-radius: 6px;
+    }
+  }
+
+  .info {
+    margin: 11px 11px 14px 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #333333;
+    div {
+      margin-top: 15px;
+    }
+  }
+
+  .price {
+    border-top: 1px solid #E7E7E7;
+    margin-top: 11px;
+    padding: 0 11px 14px 16px;
+    display: flex;
+
+    .left {
+      border-right: 1px solid #E7E7E7;
+      width: 67%;
+
+      font-style: normal;
+      font-weight: 600;
+      font-size: 23px;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      letter-spacing: -0.570146px;
+      color: #282828;
+    }
+
+    .right {
+      width: 33%;
+      justify-content: center;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 32px;
+
+      display: flex;
+
+      color: #333333;
+    }
+  }
+}
